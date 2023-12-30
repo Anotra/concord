@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['u64bitmask_0',['u64bitmask',['../group__ConcordTypes.html#ga78ce04e3844e38ab698736df12c0350f',1,'types.h']]],
-  ['u64snowflake_1',['u64snowflake',['../group__ConcordTypes.html#ga1f90b9a153d0298db01a3bf1eb334471',1,'types.h']]],
-  ['u64unix_5fms_2',['u64unix_ms',['../group__ConcordTypes.html#ga8df876efcd9f4b764d1f4daa740fdecd',1,'types.h']]]
+  ['io_5fpoller_5fcb_0',['io_poller_cb',['../io__poller_8h.html#a3da6aace323da84b1096eac1e0811cac',1,'io_poller.h']]],
+  ['io_5fpoller_5fcurl_5fcb_1',['io_poller_curl_cb',['../io__poller_8h.html#a601f79b6f5fc9f7a468f2e58132b2507',1,'io_poller.h']]],
+  ['io_5fpoller_5fsocket_2',['io_poller_socket',['../io__poller_8h.html#a8cf7beca00ac13ea4b1d5ac2cf87e426',1,'io_poller.h']]]
 ];

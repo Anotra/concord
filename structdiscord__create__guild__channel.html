@@ -103,6 +103,8 @@ Collaboration diagram for discord_create_guild_channel:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
+<tr class="memitem:a70a15e7bd55025291f6b4e9d0c2f5bec"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdiscord__create__guild__channel.html#a70a15e7bd55025291f6b4e9d0c2f5bec">reason</a></td></tr>
+<tr class="separator:a70a15e7bd55025291f6b4e9d0c2f5bec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad951bbca6e83e18736f059c48655763b"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdiscord__create__guild__channel.html#ad951bbca6e83e18736f059c48655763b">name</a></td></tr>
 <tr class="separator:ad951bbca6e83e18736f059c48655763b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a131b19fff9ebc6836c438720f079904a"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="docs_2api_2channel_8h.html#a8da5a4e81d57a68dc380394ef40a12fe">discord_channel_types</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdiscord__create__guild__channel.html#a131b19fff9ebc6836c438720f079904a">type</a></td></tr>
@@ -127,27 +129,47 @@ Data Fields</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p ><b>Public methods</b></p><ul>
 <li>Initializer:<ul>
-<li><code>discord_create_guild_channel_init(struct discord_create_guild_channel *this)</code></li>
+<li><code><a class="el" href="docs_2api_2guild_8h.html#a2f201d65447322660467b288835fbbfd">discord_create_guild_channel_init(struct discord_create_guild_channel *this)</a></code></li>
 </ul>
 </li>
 <li>Cleanup:<ul>
-<li><code>discord_create_guild_channel_cleanup(struct discord_create_guild_channel *this)</code></li>
+<li><code><a class="el" href="docs_2api_2guild_8h.html#a5a724e860d7c297d7596e8c5769f5dbd">discord_create_guild_channel_cleanup(struct discord_create_guild_channel *this)</a></code></li>
 </ul>
 </li>
 <li>JSON Decoder:<ul>
-<li><code>discord_create_guild_channel_from_json(const char json[], size_t len, struct discord_create_guild_channel *this)</code></li>
+<li><code><a class="el" href="docs_2api_2guild_8h.html#ac7d1769e77c3d30d67f65fafae2c6566">discord_create_guild_channel_from_json(const char json[], size_t len, struct discord_create_guild_channel *this)</a></code></li>
 <li><code>discord_create_guild_channel_from_jsmnf(jsmnf *root, const char json[], struct discord_create_guild_channel *this)</code></li>
 </ul>
 </li>
 <li>JSON Encoder:<ul>
-<li><code>discord_create_guild_channel_to_json(char buf[], size_t size, const struct discord_create_guild_channel *this)</code></li>
-<li><code>discord_create_guild_channel_to_jsonb(jsonb *b, char buf[], size_t size, const struct discord_create_guild_channel *this)</code> </li>
+<li><code><a class="el" href="docs_2api_2guild_8h.html#a2914d33f8e62ad0f760a0be66e7a4309">discord_create_guild_channel_to_json(char buf[], size_t size, const struct discord_create_guild_channel *this)</a></code></li>
+<li><code><a class="el" href="docs_2api_2guild_8h.html#a372dd045c635993f1bc4ce4620f59441">discord_create_guild_channel_to_jsonb(jsonb *b, char buf[], size_t size, const struct discord_create_guild_channel *this)</a></code> </li>
 </ul>
 </li>
 </ul>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="channel_8c-example.html#_a9">channel.c</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="channel_8c-example.html#_a12">channel.c</a>.</dd>
 </dl>
 </div><h2 class="groupheader">Field Documentation</h2>
+<a id="a70a15e7bd55025291f6b4e9d0c2f5bec" name="a70a15e7bd55025291f6b4e9d0c2f5bec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70a15e7bd55025291f6b4e9d0c2f5bec">&#9670;&nbsp;</a></span>reason</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* discord_create_guild_channel::reason</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reason</td><td>a <code>reason</code> to indicate why the action was taken </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ad951bbca6e83e18736f059c48655763b" name="ad951bbca6e83e18736f059c48655763b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad951bbca6e83e18736f059c48655763b">&#9670;&nbsp;</a></span>name</h2>
 
@@ -160,7 +182,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p >channel name (1-100 characters) </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="channel_8c-example.html#a10">channel.c</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="channel_8c-example.html#a13">channel.c</a>.</dd>
 </dl>
 
 </div>

@@ -97,31 +97,53 @@ $(document).ready(function(){initNavTree('structdiscord__modify__current__member
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
+<tr class="memitem:aa9ddba78b6e461a8a5a2c33437ca6d34"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdiscord__modify__current__member.html#aa9ddba78b6e461a8a5a2c33437ca6d34">reason</a></td></tr>
+<tr class="separator:aa9ddba78b6e461a8a5a2c33437ca6d34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa81c51e22b2f77a411b1b8149dc7c3cf"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdiscord__modify__current__member.html#aa81c51e22b2f77a411b1b8149dc7c3cf">nick</a></td></tr>
 <tr class="separator:aa81c51e22b2f77a411b1b8149dc7c3cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p ><b>Public methods</b></p><ul>
 <li>Initializer:<ul>
-<li><code>discord_modify_current_member_init(struct discord_modify_current_member *this)</code></li>
+<li><code><a class="el" href="docs_2api_2guild_8h.html#ac0be883337c0c1f4f7efe2269ec52005">discord_modify_current_member_init(struct discord_modify_current_member *this)</a></code></li>
 </ul>
 </li>
 <li>Cleanup:<ul>
-<li><code>discord_modify_current_member_cleanup(struct discord_modify_current_member *this)</code></li>
+<li><code><a class="el" href="docs_2api_2guild_8h.html#a391c66246c6949ef486cbca3944b8936">discord_modify_current_member_cleanup(struct discord_modify_current_member *this)</a></code></li>
 </ul>
 </li>
 <li>JSON Decoder:<ul>
-<li><code>discord_modify_current_member_from_json(const char json[], size_t len, struct discord_modify_current_member *this)</code></li>
+<li><code><a class="el" href="docs_2api_2guild_8h.html#a9986f2120421d43edddb1064429fb334">discord_modify_current_member_from_json(const char json[], size_t len, struct discord_modify_current_member *this)</a></code></li>
 <li><code>discord_modify_current_member_from_jsmnf(jsmnf *root, const char json[], struct discord_modify_current_member *this)</code></li>
 </ul>
 </li>
 <li>JSON Encoder:<ul>
-<li><code>discord_modify_current_member_to_json(char buf[], size_t size, const struct discord_modify_current_member *this)</code></li>
-<li><code>discord_modify_current_member_to_jsonb(jsonb *b, char buf[], size_t size, const struct discord_modify_current_member *this)</code> </li>
+<li><code><a class="el" href="docs_2api_2guild_8h.html#af02901650039871c672a0e094ecff4ca">discord_modify_current_member_to_json(char buf[], size_t size, const struct discord_modify_current_member *this)</a></code></li>
+<li><code><a class="el" href="docs_2api_2guild_8h.html#a4af0801288c121310971ea9e10cd5e15">discord_modify_current_member_to_jsonb(jsonb *b, char buf[], size_t size, const struct discord_modify_current_member *this)</a></code> </li>
 </ul>
 </li>
 </ul>
 </div><h2 class="groupheader">Field Documentation</h2>
+<a id="aa9ddba78b6e461a8a5a2c33437ca6d34" name="aa9ddba78b6e461a8a5a2c33437ca6d34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9ddba78b6e461a8a5a2c33437ca6d34">&#9670;&nbsp;</a></span>reason</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* discord_modify_current_member::reason</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reason</td><td>a <code>reason</code> to indicate why the action was taken </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="aa81c51e22b2f77a411b1b8149dc7c3cf" name="aa81c51e22b2f77a411b1b8149dc7c3cf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa81c51e22b2f77a411b1b8149dc7c3cf">&#9670;&nbsp;</a></span>nick</h2>
 

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['message_20flags_0',['Message flags',['../group__DiscordAPIChannelMessageFlags.html',1,'']]]
+  ['log_5fc_5fdatatypes_0',['Log_C_Datatypes',['../group__Log__C__Datatypes.html',1,'']]]
 ];

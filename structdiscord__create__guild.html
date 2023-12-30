@@ -103,6 +103,8 @@ Collaboration diagram for discord_create_guild:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
+<tr class="memitem:ae3d0bd1c9c821961290cb05b564fda6b"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdiscord__create__guild.html#ae3d0bd1c9c821961290cb05b564fda6b">reason</a></td></tr>
+<tr class="separator:ae3d0bd1c9c821961290cb05b564fda6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7cd7ea1908ca91e1658a0f02eca2e1f"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdiscord__create__guild.html#ad7cd7ea1908ca91e1658a0f02eca2e1f">name</a></td></tr>
 <tr class="separator:ad7cd7ea1908ca91e1658a0f02eca2e1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5714ce3fc68328c5a75fca5b6e59471"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdiscord__create__guild.html#aa5714ce3fc68328c5a75fca5b6e59471">region</a></td></tr>
@@ -131,25 +133,45 @@ Data Fields</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p ><b>Public methods</b></p><ul>
 <li>Initializer:<ul>
-<li><code>discord_create_guild_init(struct discord_create_guild *this)</code></li>
+<li><code><a class="el" href="docs_2api_2guild_8h.html#a9f10cde9a85da3e0a7493b2bd5246638">discord_create_guild_init(struct discord_create_guild *this)</a></code></li>
 </ul>
 </li>
 <li>Cleanup:<ul>
-<li><code>discord_create_guild_cleanup(struct discord_create_guild *this)</code></li>
+<li><code><a class="el" href="docs_2api_2guild_8h.html#a90c902ee3a992078404ef88764039519">discord_create_guild_cleanup(struct discord_create_guild *this)</a></code></li>
 </ul>
 </li>
 <li>JSON Decoder:<ul>
-<li><code>discord_create_guild_from_json(const char json[], size_t len, struct discord_create_guild *this)</code></li>
+<li><code><a class="el" href="docs_2api_2guild_8h.html#af2b5c3d36d544d34c9f50513cb46468b">discord_create_guild_from_json(const char json[], size_t len, struct discord_create_guild *this)</a></code></li>
 <li><code>discord_create_guild_from_jsmnf(jsmnf *root, const char json[], struct discord_create_guild *this)</code></li>
 </ul>
 </li>
 <li>JSON Encoder:<ul>
-<li><code>discord_create_guild_to_json(char buf[], size_t size, const struct discord_create_guild *this)</code></li>
-<li><code>discord_create_guild_to_jsonb(jsonb *b, char buf[], size_t size, const struct discord_create_guild *this)</code> </li>
+<li><code><a class="el" href="docs_2api_2guild_8h.html#a695cab1bbb1827bba6880e7795d23780">discord_create_guild_to_json(char buf[], size_t size, const struct discord_create_guild *this)</a></code></li>
+<li><code><a class="el" href="docs_2api_2guild_8h.html#a93be6ec31a60c1ee1653fa90b8c6eb58">discord_create_guild_to_jsonb(jsonb *b, char buf[], size_t size, const struct discord_create_guild *this)</a></code> </li>
 </ul>
 </li>
 </ul>
 </div><h2 class="groupheader">Field Documentation</h2>
+<a id="ae3d0bd1c9c821961290cb05b564fda6b" name="ae3d0bd1c9c821961290cb05b564fda6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3d0bd1c9c821961290cb05b564fda6b">&#9670;&nbsp;</a></span>reason</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* discord_create_guild::reason</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reason</td><td>a <code>reason</code> to indicate why the action was taken </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ad7cd7ea1908ca91e1658a0f02eca2e1f" name="ad7cd7ea1908ca91e1658a0f02eca2e1f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad7cd7ea1908ca91e1658a0f02eca2e1f">&#9670;&nbsp;</a></span>name</h2>
 
@@ -176,7 +198,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >voice region ID </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000004">Deprecated:</a></b></dt><dd>deprecated field </dd></dl>
+<p >voice region ID </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000012">Deprecated:</a></b></dt><dd>deprecated field </dd></dl>
 
 </div>
 </div>

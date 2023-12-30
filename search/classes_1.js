@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['integers_0',['integers',['../structintegers.html',1,'']]]
+  ['bitmasks_0',['bitmasks',['../structbitmasks.html',1,'']]]
 ];

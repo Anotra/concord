@@ -121,33 +121,35 @@ Data Fields</h2></td></tr>
 <tr class="separator:a426cda9910ce1811b54fdda6b5117127"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee3903d3f20d53a40554c69b27323b44"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdiscord__guild__member.html#aee3903d3f20d53a40554c69b27323b44">pending</a></td></tr>
 <tr class="separator:aee3903d3f20d53a40554c69b27323b44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05e1d193f2e7aae1f0c66fc01487438e"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdiscord__guild__member.html#a05e1d193f2e7aae1f0c66fc01487438e">permissions</a></td></tr>
-<tr class="separator:a05e1d193f2e7aae1f0c66fc01487438e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae68c81dbdc22180bfe4a684ac34c8fcd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__ConcordTypes.html#ga78ce04e3844e38ab698736df12c0350f">u64bitmask</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdiscord__guild__member.html#ae68c81dbdc22180bfe4a684ac34c8fcd">permissions</a></td></tr>
+<tr class="separator:ae68c81dbdc22180bfe4a684ac34c8fcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4eaf2ad700c9aae6432051bec8cee96"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__ConcordTypes.html#ga8df876efcd9f4b764d1f4daa740fdecd">u64unix_ms</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdiscord__guild__member.html#ac4eaf2ad700c9aae6432051bec8cee96">communication_disabled_until</a></td></tr>
 <tr class="separator:ac4eaf2ad700c9aae6432051bec8cee96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0e398708e5b687ad01ec2bbf0f662ad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__ConcordTypes.html#ga1f90b9a153d0298db01a3bf1eb334471">u64snowflake</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdiscord__guild__member.html#ac0e398708e5b687ad01ec2bbf0f662ad">guild_id</a></td></tr>
+<tr class="separator:ac0e398708e5b687ad01ec2bbf0f662ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p ><b>Public methods</b></p><ul>
 <li>Initializer:<ul>
-<li><code>discord_guild_member_init(struct discord_guild_member *this)</code></li>
+<li><code><a class="el" href="docs_2api_2guild_8h.html#aa0ecdf666c6c3ee17851381be08a0e3b">discord_guild_member_init(struct discord_guild_member *this)</a></code></li>
 </ul>
 </li>
 <li>Cleanup:<ul>
-<li><code>discord_guild_member_cleanup(struct discord_guild_member *this)</code></li>
+<li><code><a class="el" href="docs_2api_2guild_8h.html#acc64ae9c53126e6adbfab2f92f20bf02">discord_guild_member_cleanup(struct discord_guild_member *this)</a></code></li>
 </ul>
 </li>
 <li>JSON Decoder:<ul>
-<li><code>discord_guild_member_from_json(const char json[], size_t len, struct discord_guild_member *this)</code></li>
+<li><code><a class="el" href="docs_2api_2guild_8h.html#a6bc150064052aa9e55a18396c869a4fa">discord_guild_member_from_json(const char json[], size_t len, struct discord_guild_member *this)</a></code></li>
 <li><code>discord_guild_member_from_jsmnf(jsmnf *root, const char json[], struct discord_guild_member *this)</code></li>
 </ul>
 </li>
 <li>JSON Encoder:<ul>
-<li><code>discord_guild_member_to_json(char buf[], size_t size, const struct discord_guild_member *this)</code></li>
-<li><code>discord_guild_member_to_jsonb(jsonb *b, char buf[], size_t size, const struct discord_guild_member *this)</code> </li>
+<li><code><a class="el" href="docs_2api_2guild_8h.html#a473cec8d3371dc3d7c2d90ab1eb82fe3">discord_guild_member_to_json(char buf[], size_t size, const struct discord_guild_member *this)</a></code></li>
+<li><code><a class="el" href="docs_2api_2guild_8h.html#a0de06897b0467e44708fe75112014ced">discord_guild_member_to_jsonb(jsonb *b, char buf[], size_t size, const struct discord_guild_member *this)</a></code> </li>
 </ul>
 </li>
 </ul>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="audit-log_8c-example.html#_a4">audit-log.c</a>, <a class="el" href="guild_8c-example.html#_a24">guild.c</a>, and <a class="el" href="voice_8c-example.html#_a30">voice.c</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="audit-log_8c-example.html#_a6">audit-log.c</a>, and <a class="el" href="guild_8c-example.html#_a42">guild.c</a>.</dd>
 </dl>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a0030aec69b89e140cc432044de4474e5" name="a0030aec69b89e140cc432044de4474e5"></a>
@@ -162,7 +164,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p >the user this guild member represents </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="audit-log_8c-example.html#a5">audit-log.c</a>, <a class="el" href="fetch-messages_8c-example.html#a17">fetch-messages.c</a>, <a class="el" href="guild_8c-example.html#a25">guild.c</a>, <a class="el" href="slash-commands_8c-example.html#a32">slash-commands.c</a>, and <a class="el" href="voice_8c-example.html#a31">voice.c</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="audit-log_8c-example.html#a7">audit-log.c</a>, <a class="el" href="fetch-messages_8c-example.html#a18">fetch-messages.c</a>, <a class="el" href="guild_8c-example.html#a43">guild.c</a>, and <a class="el" href="slash-commands_8c-example.html#a33">slash-commands.c</a>.</dd>
 </dl>
 
 </div>
@@ -179,7 +181,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p >this user's guild nickname </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="audit-log_8c-example.html#a8">audit-log.c</a>, and <a class="el" href="fetch-messages_8c-example.html#a19">fetch-messages.c</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="fetch-messages_8c-example.html#a20">fetch-messages.c</a>.</dd>
 </dl>
 
 </div>
@@ -289,14 +291,14 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="a05e1d193f2e7aae1f0c66fc01487438e" name="a05e1d193f2e7aae1f0c66fc01487438e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05e1d193f2e7aae1f0c66fc01487438e">&#9670;&nbsp;</a></span>permissions</h2>
+<a id="ae68c81dbdc22180bfe4a684ac34c8fcd" name="ae68c81dbdc22180bfe4a684ac34c8fcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae68c81dbdc22180bfe4a684ac34c8fcd">&#9670;&nbsp;</a></span>permissions</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char* discord_guild_member::permissions</td>
+          <td class="memname"><a class="el" href="group__ConcordTypes.html#ga78ce04e3844e38ab698736df12c0350f">u64bitmask</a> discord_guild_member::permissions</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -316,6 +318,23 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p >when the user's timeout will expire and the user will be able to communicate in the guild again, null or a time in the past if the user is not timed out </p>
+
+</div>
+</div>
+<a id="ac0e398708e5b687ad01ec2bbf0f662ad" name="ac0e398708e5b687ad01ec2bbf0f662ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0e398708e5b687ad01ec2bbf0f662ad">&#9670;&nbsp;</a></span>guild_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__ConcordTypes.html#ga1f90b9a153d0298db01a3bf1eb334471">u64snowflake</a> discord_guild_member::guild_id</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >the guild id </p><dl class="section note"><dt>Note</dt><dd>extra field for <code>Guild Member Add</code> event </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="audit-log_8c-example.html#a8">audit-log.c</a>.</dd>
+</dl>
 
 </div>
 </div>

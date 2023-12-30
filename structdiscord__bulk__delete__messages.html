@@ -103,31 +103,53 @@ Collaboration diagram for discord_bulk_delete_messages:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
+<tr class="memitem:a1407e373cc5e62a9aa5f262c56bc479f"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdiscord__bulk__delete__messages.html#a1407e373cc5e62a9aa5f262c56bc479f">reason</a></td></tr>
+<tr class="separator:a1407e373cc5e62a9aa5f262c56bc479f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a5d6fb5cd4bc1f0f6878de46cd749a2"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structsnowflakes.html">snowflakes</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdiscord__bulk__delete__messages.html#a6a5d6fb5cd4bc1f0f6878de46cd749a2">messages</a></td></tr>
 <tr class="separator:a6a5d6fb5cd4bc1f0f6878de46cd749a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p ><b>Public methods</b></p><ul>
 <li>Initializer:<ul>
-<li><code>discord_bulk_delete_messages_init(struct discord_bulk_delete_messages *this)</code></li>
+<li><code><a class="el" href="docs_2api_2channel_8h.html#a87fbe9c6c58453cb7e3ecc557518b954">discord_bulk_delete_messages_init(struct discord_bulk_delete_messages *this)</a></code></li>
 </ul>
 </li>
 <li>Cleanup:<ul>
-<li><code>discord_bulk_delete_messages_cleanup(struct discord_bulk_delete_messages *this)</code></li>
+<li><code><a class="el" href="docs_2api_2channel_8h.html#afa5d4317564b7cb39ada8a2de42829d0">discord_bulk_delete_messages_cleanup(struct discord_bulk_delete_messages *this)</a></code></li>
 </ul>
 </li>
 <li>JSON Decoder:<ul>
-<li><code>discord_bulk_delete_messages_from_json(const char json[], size_t len, struct discord_bulk_delete_messages *this)</code></li>
+<li><code><a class="el" href="docs_2api_2channel_8h.html#aee59faf29e670c39066b5a19d216e238">discord_bulk_delete_messages_from_json(const char json[], size_t len, struct discord_bulk_delete_messages *this)</a></code></li>
 <li><code>discord_bulk_delete_messages_from_jsmnf(jsmnf *root, const char json[], struct discord_bulk_delete_messages *this)</code></li>
 </ul>
 </li>
 <li>JSON Encoder:<ul>
-<li><code>discord_bulk_delete_messages_to_json(char buf[], size_t size, const struct discord_bulk_delete_messages *this)</code></li>
-<li><code>discord_bulk_delete_messages_to_jsonb(jsonb *b, char buf[], size_t size, const struct discord_bulk_delete_messages *this)</code> </li>
+<li><code><a class="el" href="docs_2api_2channel_8h.html#ae4a0bd19d81843ddc845548a6ca98bc8">discord_bulk_delete_messages_to_json(char buf[], size_t size, const struct discord_bulk_delete_messages *this)</a></code></li>
+<li><code><a class="el" href="docs_2api_2channel_8h.html#ac67b462b9cb06b419d0ac3d3142b1473">discord_bulk_delete_messages_to_jsonb(jsonb *b, char buf[], size_t size, const struct discord_bulk_delete_messages *this)</a></code> </li>
 </ul>
 </li>
 </ul>
 </div><h2 class="groupheader">Field Documentation</h2>
+<a id="a1407e373cc5e62a9aa5f262c56bc479f" name="a1407e373cc5e62a9aa5f262c56bc479f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1407e373cc5e62a9aa5f262c56bc479f">&#9670;&nbsp;</a></span>reason</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* discord_bulk_delete_messages::reason</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reason</td><td>a <code>reason</code> to indicate why the action was taken </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a6a5d6fb5cd4bc1f0f6878de46cd749a2" name="a6a5d6fb5cd4bc1f0f6878de46cd749a2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6a5d6fb5cd4bc1f0f6878de46cd749a2">&#9670;&nbsp;</a></span>messages</h2>
 
