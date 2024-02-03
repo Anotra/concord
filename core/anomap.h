@@ -17,6 +17,11 @@
     return *(data_type *)a > *(data_type *)b ? 1 : -1;                        \
   }
 
+enum anomap_options {
+  anomap_reverse_order = 1 << 0,
+  anomap_direct_access = 1 << 1,
+};
+
 enum anomap_operation {
   anomap_insert = 1 << 0,
   anomap_update = 1 << 1,
@@ -27,11 +32,20 @@ enum anomap_operation {
 
 struct anomap;
 
+size_t anomap_struct_size(void);
+
+bool anomap_init(struct anomap *map,
+                 size_t key_size, size_t val_size,
+                 int (*cmp)(const void *, const void *),
+                 enum anomap_options options);
+
 struct anomap *anomap_create(size_t key_size, size_t val_size,
-                             int (*cmp)(const void *, const void *));
+                             int (*cmp)(const void *, const void *),
+                             enum anomap_options options);
 void anomap_destroy(struct anomap *map);
 
 struct anomap_item_changed {
+  struct anomap *map;
   void *data;
   enum anomap_operation op;
   void *key;
@@ -41,8 +55,7 @@ struct anomap_item_changed {
   } val;
 };
 
-typedef void anomap_on_item_changed(
-  struct anomap *map, struct anomap_item_changed *item_changed);
+typedef void anomap_on_item_changed(const struct anomap_item_changed *ev);
 
 void anomap_set_on_item_changed(
   struct anomap *map, anomap_on_item_changed *on_changed, void *data);
@@ -50,8 +63,11 @@ void anomap_set_on_item_changed(
 size_t anomap_length(struct anomap *map);
 void anomap_clear(struct anomap *map);
 
+bool anomap_contains(struct anomap *map, void *key);
 bool anomap_index_of(struct anomap *map, void *key, size_t *index);
 bool anomap_at_index(struct anomap *map, size_t index, void *key, void *val);
+const void *anomap_direct_key_at_index(struct anomap *map, size_t index);
+void *anomap_direct_val_at_index(struct anomap *map, size_t index);
 
 enum anomap_operation anomap_do(struct anomap *map,
                                 enum anomap_operation operation,
@@ -63,5 +79,11 @@ size_t anomap_copy_range(struct anomap *map,
 size_t anomap_delete_range(struct anomap *map,
                            size_t from_index, size_t to_index,
                            void *keys, void *vals);
+
+typedef void anomap_foreach_cb(struct anomap *map, void *data,
+                               const void *key, const void *val);
+void anomap_foreach(struct anomap *map, anomap_foreach_cb *cb, void *data);
+
+int anomap_cmp_str(const void *a, const void *b);
 
 #endif // !ANOMAP_H

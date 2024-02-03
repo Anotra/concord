@@ -174,24 +174,37 @@ EV_CB(message_delete, discord_message_delete)
 }
 
 static void
+_delete_old_messages_from_cache(struct _discord_shard_cache *cache,
+                                unsigned minutes_old)
+{
+    u64snowflake delete_before =
+        ((cog_timestamp_ms() - DISCORD_EPOCH) - minutes_old * 60 * 1000) << 22;
+    size_t idx;
+    anomap_index_of(cache->msg_map, &delete_before, &idx);
+    if (idx--) anomap_delete_range(cache->msg_map, 0, idx, NULL, NULL);
+}
+
+static void
 _on_garbage_collection(struct discord *client, struct discord_timer *timer)
 {
     (void)client;
     struct _discord_cache_data *data = timer->data;
-    for (int i = 0; i < data->total_shards; i++) {
-        struct _discord_shard_cache *const cache = &data->caches[i];
-        pthread_mutex_lock(&cache->lock);
-        { // DELETE MESSAGES
-            u64snowflake delete_before =
-                ((cog_timestamp_ms() - DISCORD_EPOCH) - 10 * 60 * 1000) << 22;
-            size_t idx;
-            anomap_index_of(cache->msg_map, &delete_before, &idx);
-            if (idx--) anomap_delete_range(cache->msg_map, 0, idx, NULL, NULL);
-        } // !DELETE MESSAGES
-        pthread_mutex_unlock(&cache->lock);
-    }
     timer->repeat = 1;
     timer->interval = 1000 * 60;
+
+    for (int i = 0; i < data->total_shards; i++) {
+        struct _discord_shard_cache *const cache = &data->caches[i];
+        if (0 == pthread_mutex_trylock(&cache->lock)) {
+            _delete_old_messages_from_cache(cache, 15 /* minutes */);
+            pthread_mutex_unlock(&cache->lock);
+        }
+        else {
+            // couldn't get lock, don't block,
+            // just try again in 10 seconds instead of 60 seconds
+            timer->interval = 1000 * 10;
+            continue;
+        }
+    }
 }
 
 static void
@@ -215,19 +228,17 @@ _discord_cache_cleanup(struct discord *client)
 }
 
 static void
-_on_guild_map_changed(struct anomap *map, struct anomap_item_changed *ev)
+_on_guild_map_changed(const struct anomap_item_changed *ev)
 {
     struct discord_refcounter *rc = &((struct discord *)ev->data)->refcounter;
-    (void)map;
     if (ev->op & (anomap_update | anomap_delete))
         discord_refcounter_decr(rc, *(void **)ev->val.prev);
 }
 
 static void
-_on_map_changed(struct anomap *map, struct anomap_item_changed *ev)
+_on_map_changed(const struct anomap_item_changed *ev)
 {
     struct discord_refcounter *rc = &((struct discord *)ev->data)->refcounter;
-    (void)map;
     if (ev->op & (anomap_delete | anomap_update))
         discord_refcounter_decr(rc, *(void **)ev->val.prev);
     if (ev->op & anomap_upsert)
@@ -251,10 +262,11 @@ discord_cache_enable(struct discord *client,
             struct _discord_shard_cache *cache = &data->caches[i];
             pthread_mutex_init(&cache->lock, NULL);
             const size_t sf_sz = sizeof(u64snowflake);
-            cache->guild_map = anomap_create(sf_sz, sizeof(void *), _cmp_sf);
+            cache->guild_map =
+                anomap_create(sf_sz, sizeof(void *), _cmp_sf, 0);
             anomap_set_on_item_changed(cache->guild_map, _on_guild_map_changed,
                                        client);
-            cache->msg_map = anomap_create(sf_sz, sizeof(void *), _cmp_sf);
+            cache->msg_map = anomap_create(sf_sz, sizeof(void *), _cmp_sf, 0);
             anomap_set_on_item_changed(cache->msg_map, _on_map_changed,
                                        client);
         }
