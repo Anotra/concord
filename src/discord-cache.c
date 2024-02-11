@@ -111,7 +111,7 @@ _on_shard_disconnected(struct discord *client,
         memset(guild, 0, sizeof *guild);                                      \
         discord_guild_from_json(buf, size, guild);                            \
         discord_refcounter_add_internal(                                      \
-            &client->refcounter, guild,                                       \
+            &client->refcounter, "cache_guild", guild,                        \
             (void (*)(void *))discord_guild_cleanup, true);                   \
     } while (0)
 

@@ -169,8 +169,9 @@ discord_message_commands_try_perform(struct discord_message_commands *cmds,
         if (CCORD_RESOURCE_UNAVAILABLE
             == discord_refcounter_incr(&client->refcounter, event_data))
         {
-            discord_refcounter_add_internal(&client->refcounter, event_data,
-                                            _discord_message_cleanup_v, false);
+            discord_refcounter_add_internal(
+                &client->refcounter, "discord_message_commands_try_perform",
+                event_data, _discord_message_cleanup_v, false);
         }
         callback(client, event_data);
         event_data->content = tmp; /* retrieve original ptr */

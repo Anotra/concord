@@ -391,7 +391,8 @@ discord_requestor_info_read(struct discord_requestor *rqtor)
                                   body.start);
                 }
                 else if (req->dispatch.has_type
-                         && req->dispatch.sync != DISCORD_SYNC_FLAG) {
+                         && req->dispatch.sync != DISCORD_SYNC_FLAG)
+                {
                     if (req->dispatch.sync) {
                         req->response.data = req->dispatch.sync;
                     }
@@ -399,7 +400,8 @@ discord_requestor_info_read(struct discord_requestor *rqtor)
                         req->response.data = calloc(1, req->response.size);
                         discord_refcounter_add_internal(
                             &CLIENT(rqtor, rest.requestor)->refcounter,
-                            req->response.data, req->response.cleanup, true);
+                            "discord_requestor_info_read", req->response.data,
+                            req->response.cleanup, true);
                     }
 
                     /* initialize ret */
@@ -631,8 +633,9 @@ discord_request_begin(struct discord_requestor *rqtor,
                == discord_refcounter_incr(&client->refcounter,
                                           req->dispatch.data))
     {
-        discord_refcounter_add_client(&client->refcounter, req->dispatch.data,
-                                      req->dispatch.cleanup, false);
+        discord_refcounter_add_client(
+            &client->refcounter, "discord_request_begin", req->dispatch.data,
+            req->dispatch.cleanup, false);
     }
 
     pthread_mutex_lock(&rqtor->qlocks->pending);

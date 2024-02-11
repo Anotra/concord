@@ -120,6 +120,7 @@ discord_gateway_dispatch(struct discord_gateway *gw)
                 == discord_refcounter_incr(&client->refcounter, event_data))
             {
                 discord_refcounter_add_internal(&client->refcounter,
+                                                "discord_gateway_dispatch",
                                                 event_data,
                                                 dispatch[event].cleanup, true);
             }

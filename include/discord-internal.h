@@ -29,6 +29,7 @@ extern "C" {
 #include "queue.h"
 #include "priority_queue.h"
 #include "attributes.h"
+#include "anomap.h"
 
 /** @brief Return 1 if string isn't considered empty */
 #define NOT_EMPTY_STR(str) ((str) && *(str))
@@ -938,17 +939,9 @@ void discord_gateway_dispatch(struct discord_gateway *gw);
 struct discord_refcounter {
     /** `DISCORD_REFCOUNT` logging module */
     struct logconf conf;
-    /** amount of individual user's data held for automatic cleanup */
-    int length;
-    /** cap before increase */
-    int capacity;
-    /**
-     * individual user's data held for automatic cleanup
-     * @note datatype declared at discord-refcount.c
-     */
-    struct _discord_ref *refs;
-    /** global lock */
-    pthread_mutex_t *g_lock;
+
+    struct anomap *maps[16];
+    pthread_mutex_t locks[16];
 };
 
 /**
@@ -971,6 +964,7 @@ void discord_refcounter_init(struct discord_refcounter *rc,
  * @param should_free whether `data` cleanup should be followed by a free()
  */
 void discord_refcounter_add_internal(struct discord_refcounter *rc,
+                                     const char * name,
                                      void *data,
                                      void (*cleanup)(void *data),
                                      bool should_free);
@@ -985,6 +979,7 @@ void discord_refcounter_add_internal(struct discord_refcounter *rc,
  * @param should_free whether `data` cleanup should be followed by a free()
  */
 void discord_refcounter_add_client(struct discord_refcounter *rc,
+                                   const char * name,
                                    void *data,
                                    void (*cleanup)(struct discord *client,
                                                    void *data),

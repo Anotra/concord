@@ -84,7 +84,8 @@ discord_get_channel_at_pos(struct discord *client,
         && CCORD_RESOURCE_UNAVAILABLE
                == discord_refcounter_incr(&client->refcounter, ret->data))
     {
-        discord_refcounter_add_client(&client->refcounter, ret->data,
+        discord_refcounter_add_client(&client->refcounter,
+                                      "discord_get_channel_at_pos", ret->data,
                                       ret->cleanup, false);
     }
 
